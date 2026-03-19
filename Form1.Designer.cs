@@ -62,6 +62,7 @@
             textLine.Name = "textLine";
             textLine.Size = new Size(616, 33);
             textLine.TabIndex = 2;
+            textLine.KeyDown += textLine_KeyDown;
             // 
             // enterButton
             // 
