@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            mainLabel = new Label();
             logBox = new ListBox();
             textLine = new TextBox();
             enterButton = new Button();
             SuspendLayout();
             // 
-            // label1
+            // mainLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("맑은 고딕", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 129);
-            label1.Location = new Point(21, 20);
-            label1.Name = "label1";
-            label1.Size = new Size(259, 45);
-            label1.TabIndex = 0;
-            label1.Text = "EchoMessenger";
+            mainLabel.AutoSize = true;
+            mainLabel.BackColor = Color.Transparent;
+            mainLabel.Font = new Font("맑은 고딕", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 129);
+            mainLabel.Location = new Point(21, 20);
+            mainLabel.Name = "mainLabel";
+            mainLabel.Size = new Size(259, 45);
+            mainLabel.TabIndex = 0;
+            mainLabel.Text = "EchoMessenger";
             // 
             // logBox
             // 
@@ -71,25 +73,28 @@
             enterButton.TabIndex = 3;
             enterButton.Text = "전송";
             enterButton.UseVisualStyleBackColor = false;
+            enterButton.Click += enterButton_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
             Controls.Add(enterButton);
             Controls.Add(textLine);
             Controls.Add(logBox);
-            Controls.Add(label1);
+            Controls.Add(mainLabel);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
+        private Label mainLabel;
         private ListBox logBox;
         private TextBox textLine;
         private Button enterButton;
