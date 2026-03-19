@@ -34,6 +34,7 @@
             textLine = new TextBox();
             enterButton = new Button();
             countBox = new Label();
+            deleteButton = new Button();
             SuspendLayout();
             // 
             // mainLabel
@@ -55,6 +56,7 @@
             logBox.Name = "logBox";
             logBox.Size = new Size(751, 229);
             logBox.TabIndex = 1;
+            logBox.MouseClick += logBox_MouseClick;
             // 
             // textLine
             // 
@@ -87,12 +89,25 @@
             countBox.TabIndex = 4;
             countBox.Text = "현재 대화: 0개";
             // 
+            // deleteButton
+            // 
+            deleteButton.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            deleteButton.ForeColor = Color.Red;
+            deleteButton.Location = new Point(683, 36);
+            deleteButton.Name = "deleteButton";
+            deleteButton.Size = new Size(89, 32);
+            deleteButton.TabIndex = 5;
+            deleteButton.Text = "삭제";
+            deleteButton.UseVisualStyleBackColor = true;
+            deleteButton.Click += deleteButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(deleteButton);
             Controls.Add(countBox);
             Controls.Add(enterButton);
             Controls.Add(textLine);
@@ -112,5 +127,6 @@
         private TextBox textLine;
         private Button enterButton;
         private Label countBox;
+        private Button deleteButton;
     }
 }

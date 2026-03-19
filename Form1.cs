@@ -18,7 +18,7 @@ namespace EchoMessenger
         private void enterButton_Click(object sender, EventArgs e)
         {
             string typed_msg;
-            if(string.IsNullOrWhiteSpace(textLine.Text))
+            if (string.IsNullOrWhiteSpace(textLine.Text))
             {
                 textLine.Focus();
                 return;
@@ -40,6 +40,26 @@ namespace EchoMessenger
             if (e.KeyCode == Keys.Enter)
             {
                 enterButton.PerformClick();
+            }
+        }
+
+        private void logBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (logBox.SelectedItem != null)
+            {
+
+            }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            if (logBox.SelectedItem != null)
+            {
+                logBox.Items.Remove(logBox.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("삭제할 메세지가 선택되지 않았습니다.");
             }
         }
     }
