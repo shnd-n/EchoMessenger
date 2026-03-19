@@ -23,10 +23,12 @@ namespace EchoMessenger
                 textLine.Focus();
                 return;
             }
+            typed_msg = textLine.Text.Trim();
 
-            typed_msg = textLine.Text;
+            string result = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} {typed_msg}";
 
-            logBox.Items.Add(typed_msg);
+            logBox.Items.Add(result);
+            countBox.Text = $"현재 대화: {logBox.Items.Count}개";
 
             textLine.Clear();
 

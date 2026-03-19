@@ -33,6 +33,7 @@
             logBox = new ListBox();
             textLine = new TextBox();
             enterButton = new Button();
+            countBox = new Label();
             SuspendLayout();
             // 
             // mainLabel
@@ -58,7 +59,7 @@
             // textLine
             // 
             textLine.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            textLine.Location = new Point(21, 345);
+            textLine.Location = new Point(21, 362);
             textLine.Name = "textLine";
             textLine.Size = new Size(616, 33);
             textLine.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             enterButton.BackColor = SystemColors.GradientInactiveCaption;
             enterButton.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            enterButton.Location = new Point(667, 333);
+            enterButton.Location = new Point(667, 345);
             enterButton.Name = "enterButton";
             enterButton.Size = new Size(105, 50);
             enterButton.TabIndex = 3;
@@ -76,12 +77,23 @@
             enterButton.UseVisualStyleBackColor = false;
             enterButton.Click += enterButton_Click;
             // 
+            // countBox
+            // 
+            countBox.AutoSize = true;
+            countBox.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            countBox.Location = new Point(24, 320);
+            countBox.Name = "countBox";
+            countBox.Size = new Size(137, 25);
+            countBox.TabIndex = 4;
+            countBox.Text = "현재 대화: 0개";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(countBox);
             Controls.Add(enterButton);
             Controls.Add(textLine);
             Controls.Add(logBox);
@@ -99,5 +111,6 @@
         private ListBox logBox;
         private TextBox textLine;
         private Button enterButton;
+        private Label countBox;
     }
 }
