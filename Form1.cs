@@ -23,6 +23,13 @@ namespace EchoMessenger
                 textLine.Focus();
                 return;
             }
+            else if(textLine.Text.Length > 50)
+            {
+                MessageBox.Show("메세지는 50자 이하로 입력해주십시오.");
+                textLine.Focus();
+                return;
+            }
+
             typed_msg = textLine.Text.Trim();
 
             string result = $"{DateTime.Now:yyyy-MM-dd HH:mm:ss} {typed_msg}";
@@ -45,10 +52,7 @@ namespace EchoMessenger
 
         private void logBox_MouseClick(object sender, MouseEventArgs e)
         {
-            if (logBox.SelectedItem != null)
-            {
 
-            }
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
@@ -61,6 +65,11 @@ namespace EchoMessenger
             {
                 MessageBox.Show("삭제할 메세지가 선택되지 않았습니다.");
             }
+        }
+
+        private void deleteAll_MouseClick(object sender, MouseEventArgs e)
+        {
+            logBox.Items.Clear();
         }
     }
 }

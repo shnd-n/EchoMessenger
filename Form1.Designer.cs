@@ -35,6 +35,7 @@
             enterButton = new Button();
             countBox = new Label();
             deleteButton = new Button();
+            deleteAll = new Button();
             SuspendLayout();
             // 
             // mainLabel
@@ -61,7 +62,7 @@
             // textLine
             // 
             textLine.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            textLine.Location = new Point(21, 362);
+            textLine.Location = new Point(21, 365);
             textLine.Name = "textLine";
             textLine.Size = new Size(616, 33);
             textLine.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             enterButton.BackColor = SystemColors.GradientInactiveCaption;
             enterButton.Font = new Font("맑은 고딕", 18F, FontStyle.Bold, GraphicsUnit.Point, 129);
-            enterButton.Location = new Point(667, 345);
+            enterButton.Location = new Point(667, 353);
             enterButton.Name = "enterButton";
             enterButton.Size = new Size(105, 50);
             enterButton.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             deleteButton.Font = new Font("맑은 고딕", 12F, FontStyle.Bold, GraphicsUnit.Point, 129);
             deleteButton.ForeColor = Color.Red;
-            deleteButton.Location = new Point(683, 36);
+            deleteButton.Location = new Point(683, 312);
             deleteButton.Name = "deleteButton";
             deleteButton.Size = new Size(89, 32);
             deleteButton.TabIndex = 5;
@@ -101,12 +102,25 @@
             deleteButton.UseVisualStyleBackColor = true;
             deleteButton.Click += deleteButton_Click;
             // 
+            // deleteAll
+            // 
+            deleteAll.Font = new Font("맑은 고딕", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 129);
+            deleteAll.ForeColor = Color.Red;
+            deleteAll.Location = new Point(613, 20);
+            deleteAll.Name = "deleteAll";
+            deleteAll.Size = new Size(159, 44);
+            deleteAll.TabIndex = 6;
+            deleteAll.Text = "대화 기록 삭제";
+            deleteAll.UseVisualStyleBackColor = true;
+            deleteAll.MouseClick += deleteAll_MouseClick;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 450);
+            Controls.Add(deleteAll);
             Controls.Add(deleteButton);
             Controls.Add(countBox);
             Controls.Add(enterButton);
@@ -128,5 +142,6 @@
         private Button enterButton;
         private Label countBox;
         private Button deleteButton;
+        private Button deleteAll;
     }
 }
